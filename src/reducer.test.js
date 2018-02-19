@@ -20,7 +20,7 @@ describe('Reducer', () => {
 
     describe('restartGame', () => {
         it('Should start a new game', () => {
-            // Mess up the state a bit to simulate an existing game
+
             let state = {
                 guesses: [1, 2, 3, 4],
                 feedback: 'Awesome',
@@ -37,11 +37,11 @@ describe('Reducer', () => {
 
     describe('makeGuess', () => {
         it('Should make a guess', () => {
-            // Fix the correct answer so we know what we're aiming for
+
             let state = {
                 guesses: [],
                 feedback: '',
-                correctAnswer: 100 // Negative so different to new game
+                correctAnswer: 100
             };
 
             state = reducer(state, makeGuess(25));
@@ -68,14 +68,14 @@ describe('Reducer', () => {
 
     it('Can generate aural updates', () => {
         let state = {
-            guesses: [25, 3, 90],
+            guesses: [13, 41, 9],
             feedback: "You're Warm.",
             auralStatus: ''
         };
 
         state = reducer(state, generateAuralUpdate());
         expect(state.auralStatus).toEqual(
-            "Here's the status of the game right now: You're Warm. You've made 3 guesses. In order of most- to least-recent, they are: 90, 3, 25"
+            "Here's how the game is going right now: You're Warm. You've made 3 guesses. In order of most- to least-recent, they are: 13, 41, 9"
         );
     });
 });
