@@ -7,6 +7,7 @@ import {
     GENERATE_AURAL_UPDATE
 } from './actions';
 
+
 describe('restartGame', () => {
     it('Should return the action', () => {
         const correctAnswer = 10;

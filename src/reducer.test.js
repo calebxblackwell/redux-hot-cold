@@ -1,6 +1,7 @@
 import reducer from './reducer';
 import {restartGame, makeGuess, generateAuralUpdate} from './actions';
 
+
 describe('Reducer', () => {
     it('Should set the initial state when nothing is passed in', () => {
         const state = reducer(undefined, {type: '__UNKNOWN'});
